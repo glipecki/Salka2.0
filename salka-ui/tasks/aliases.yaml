@@ -1,0 +1,31 @@
+default:
+  description: "Default task"
+  tasks:
+  - "info"
+  - "clean"
+  - "copy-resources"
+  - "compile"
+  - "devmode"
+copy-resources:
+  description: ""
+  tasks:
+  - "copy:libs"
+  - "copy:resources"
+compile:
+  description: ""
+  tasks:
+  - "ts"
+devmode:
+  description: ""
+  tasks:
+  - "configureRewriteRules"
+  - "configureProxies:server"
+  - "connect:server"
+  - "browserSync"
+  - "watch"
+after-resources-watch:
+  description: ""
+  tasks:
+  - "newer:copy:libs"
+  - "newer:copy:resources"
+  - "compile"

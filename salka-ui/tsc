@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# verify node
+command -v node >/dev/null 2>&1 || {
+    echo "Missing node, pleas install node"
+    exit 1
+}
+
+# verify grunt npm module installed
+if [ ! -d  node_modules/typescript ]; then
+    echo "Missing typescript node module installed, please run npm install first"
+    exit 1
+fi
+
+# run tsc
+./node_modules/typescript/bin/tsc $@

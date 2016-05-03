@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="libs/es6-shim.min.js"></script>
+    <script src="libs/system-polyfills.js"></script>
+    <script src="libs/shims_for_IE.js"></script>
+    <script src="libs/angular2-polyfills.js"></script>
+    <script src="libs/system.src.js"></script>
+
+    <script>
+        System.config({
+            defaultJSExtensions: true
+        });
+    </script>
+
+    <!--
+        we need to load bundles after system.config to properly handle modules registered without js extension
+        - https://github.com/systemjs/systemjs/issues/728
+        - https://github.com/systemjs/systemjs/issues/761
+    -->
+    <script src="libs/Rx.js"></script>
+    <script src="libs/angular2.dev.js"></script>
+    <script src="libs/router.dev.js"></script>
+
+    <script>
+        System.import('main')
+                .then(null, console.error.bind(console));
+    </script>
+
+</head>
+
+<body>
+<my-app>Loading...</my-app>
+</body>
+</html>
