@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class JwtAuthenticationFilter extends AbstractPreAuthenticatedProcessingFilter {
 
-    private static final String BEARER_PREFIX = "Bearer ";
+    public static final String BEARER_PREFIX = "Bearer ";
 
     public JwtAuthenticationFilter(final AuthenticationManager authenticationManager) {
         setAuthenticationManager(authenticationManager);

@@ -4,3 +4,4 @@ target
 .tscache
 node_modules
 typings
+.DS_Store

@@ -1,5 +1,7 @@
 package net.lipecki.salka.security;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -9,10 +11,12 @@ public class SalkaUser {
 
     private final List<String> authorities;
 
+    @ApiModelProperty(value = "Unique user identifier", required = true, example = "admin")
     public String getUsername() {
         return username;
     }
 
+    @ApiModelProperty(value = "User granted authorities", required = true)
     public List<String> getAuthorities() {
         return authorities;
     }
