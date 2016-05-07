@@ -5,6 +5,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * User of salka ;)
+ */
 public class SalkaUser {
 
     private final String username;
