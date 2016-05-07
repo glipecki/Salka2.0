@@ -27,10 +27,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>/bin/bash</executable>
-                            <arguments>
-                                <argument>maven-integration.sh</argument>
-                            </arguments>
+                            <executable>maven-integration${script.extension}</executable>
                         </configuration>
                     </execution>
                 </executions>
