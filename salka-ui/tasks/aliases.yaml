@@ -1,11 +1,13 @@
 default:
   description: "Default task"
   tasks:
-  - "info"
+  - "build"
+  - "devmode"
+build:
+  tasks:
   - "clean"
   - "copy-resources"
   - "compile"
-  - "devmode"
 copy-resources:
   description: ""
   tasks:

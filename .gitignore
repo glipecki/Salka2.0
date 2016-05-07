@@ -5,3 +5,4 @@ target
 node_modules
 typings
 .DS_Store
+tscommand*.tmp.txt

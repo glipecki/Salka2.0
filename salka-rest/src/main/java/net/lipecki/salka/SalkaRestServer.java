@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppConfiguration {
+public class SalkaRestServer {
 
     public static void main(final String[] args) {
-        SpringApplication.run(AppConfiguration.class, args);
+        SpringApplication.run(SalkaRestServer.class, args);
     }
 
 }

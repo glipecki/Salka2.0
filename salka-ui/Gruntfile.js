@@ -5,8 +5,8 @@ module.exports = function (grunt) {
         config: {
             paths: {
                 target: {
-                    root: "target",
-                    libs: "target/libs"
+                    root: "target/webapp",
+                    libs: "target/webapp/libs"
                 }
             }
         },

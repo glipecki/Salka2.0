@@ -9,7 +9,7 @@
     "module": "system",
     "moduleResolution": "node",
     "pretty": true,
-    "outDir": "target",
+    "outDir": "target/webapp",
     "rootDir": "src",
     "baseUrl": "src",
     "sourceRoot": "/"

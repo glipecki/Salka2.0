@@ -2,7 +2,7 @@ module.exports = function (grunt, options) {
     return {
         dev: {
             bsFiles: {
-                src: 'target/**/*'
+                src: 'target/webapp/**/*'
             },
             options: {
                 port: 9100,
