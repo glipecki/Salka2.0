@@ -7,6 +7,8 @@ import java.util.List;
 
 public class JwtTokenService {
 
+    public static final String AUTHORITIES = "authorities";
+
     private byte[] getSigningKey() {
         return "secret".getBytes();
     }
@@ -16,17 +18,20 @@ public class JwtTokenService {
     }
 
     private JwtBuilder getBuilder() {
-        return Jwts.builder().signWith(SignatureAlgorithm.ES256, getSigningKey());
+        return Jwts.builder().signWith(SignatureAlgorithm.HS512, getSigningKey());
     }
 
     public SalkaUser parseUser(final String jwtToken) {
         final Jws<Claims> token = getParser().parseClaimsJws(jwtToken);
-        final List<String> authorities = (List<String>) token.getBody().get("authorities");
+        final List<String> authorities = (List<String>) token.getBody().get(AUTHORITIES);
         return new SalkaUser(token.getBody().getSubject(), authorities);
     }
 
     public String getToken(final SalkaUser user) {
-        return getBuilder().compact();
+        return getBuilder()
+                .setSubject(user.getUsername())
+                .claim(AUTHORITIES, user.getAuthorities())
+                .compact();
     }
 
 }
