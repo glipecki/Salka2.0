@@ -6,6 +6,16 @@ module.exports = function (grunt, options) {
                 to: "/index.html"
             }
         ],
+        proxies: [
+            {
+                context: "/api",
+                host: "127.0.0.1",
+                port: 8080,
+                rewrite: {
+                    "^/api": "/api"
+                }
+            }
+        ],
         server: {
             options: {
                 port: 9101,

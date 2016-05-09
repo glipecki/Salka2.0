@@ -1,31 +1,57 @@
 module.exports = function (grunt, options) {
     return {
-        libs: {
-            files: [{
-                expand: true,
-                dest: "<%= paths.target.libs %>",
-                flatten: true,
-                src: [
-                    "node_modules/es6-shim/es6-shim.min.js",
-                    "node_modules/systemjs/dist/system-polyfills.js",
-                    "node_modules/angular2/es6/dev/src/testing/shims_for_IE.js",
-                    "node_modules/angular2/bundles/angular2-polyfills.js",
-                    "node_modules/systemjs/dist/system.src.js",
-                    "node_modules/rxjs/bundles/Rx.js",
-                    "node_modules/angular2/bundles/angular2.dev.js",
-                    "node_modules/angular2/bundles/router.dev.js"
-                ]
-            }]
+        sourcesToCompile: {
+            files: [
+                {
+                    expand: true,
+                    dest: "target/compile",
+                    cwd: "src/",
+                    src: [
+                        "**/*"
+                    ]
+                }
+            ]
         },
-        resources: {
-            files: [{
-                expand: true,
-                cwd: "src/",
-                dest: "<%= paths.target.root %>",
-                src: [
-                    "**/*"
-                ]
-            }]
+        typingsToCompile: {
+            files: [
+                {
+                    expand: true,
+                    dest: "target/compile",
+                    src: [
+                        "typings/**/*"
+                    ]
+                }
+            ]
+        },
+        libsToDest: {
+            files: [
+                {
+                    expand: true,
+                    dest: "<%= paths.target.libs %>",
+                    cwd: "node_modules",
+                    src: [
+                        "es6-shim/es6-shim.js",
+                        "zone.js/dist/*.js",
+                        "reflect-metadata/*.js",
+                        "systemjs/dist/system.src.js",
+                        "systemjs/dist/system-polyfills.js",
+                        "rxjs/**/*.js",
+                        "@angular/**/*.js"
+                    ]
+                }
+            ]
+        },
+        compiledToDest: {
+            files: [
+                {
+                    expand: true,
+                    dest: "<%= paths.target.root %>",
+                    cwd: "target/compile/",
+                    src: [
+                        "**/*"
+                    ]
+                }
+            ]
         }
     };
 };

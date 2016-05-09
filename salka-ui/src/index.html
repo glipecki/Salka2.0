@@ -1,37 +1,24 @@
+<!doctype html>
 <html>
 <head>
-    <title>Angular 2 QuickStart</title>
+    <meta charset="utf-8">
+    <title>SampleNgApp</title>
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script src="libs/es6-shim.min.js"></script>
-    <script src="libs/system-polyfills.js"></script>
-    <script src="libs/shims_for_IE.js"></script>
-    <script src="libs/angular2-polyfills.js"></script>
-    <script src="libs/system.src.js"></script>
-
-    <script>
-        System.config({
-            defaultJSExtensions: true
-        });
-    </script>
-
-    <!--
-        we need to load bundles after system.config to properly handle modules registered without js extension
-        - https://github.com/systemjs/systemjs/issues/728
-        - https://github.com/systemjs/systemjs/issues/761
-    -->
-    <script src="libs/Rx.js"></script>
-    <script src="libs/angular2.dev.js"></script>
-    <script src="libs/router.dev.js"></script>
-
-    <script>
-        System.import('main')
-                .then(null, console.error.bind(console));
-    </script>
-
 </head>
-
 <body>
-<my-app>Loading...</my-app>
+<salka-app>Loading...</salka-app>
+
+<script src="libs/es6-shim/es6-shim.js"></script>
+<script src="libs/reflect-metadata/Reflect.js"></script>
+<script src="libs/systemjs/dist/system.src.js"></script>
+<script src="libs/zone.js/dist/zone.js"></script>
+
+<script>
+    System.import('system-config.js').then(function () {
+        System.import('main.js');
+    }).catch(console.error.bind(console));
+</script>
 </body>
 </html>

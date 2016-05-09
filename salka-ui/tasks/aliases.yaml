@@ -1,24 +1,19 @@
 default:
-  description: "Default task"
   tasks:
   - "build"
   - "devmode"
 build:
   tasks:
   - "clean"
-  - "copy-resources"
+  - "copy:sourcesToCompile"
+  - "copy:typingsToCompile"
   - "compile"
-copy-resources:
-  description: ""
-  tasks:
-  - "copy:libs"
-  - "copy:resources"
+  - "copy:libsToDest"
+  - "copy:compiledToDest"
 compile:
-  description: ""
   tasks:
   - "ts"
 devmode:
-  description: ""
   tasks:
   - "configureRewriteRules"
   - "configureProxies:server"
@@ -26,8 +21,7 @@ devmode:
   - "browserSync"
   - "watch"
 after-resources-watch:
-  description: ""
   tasks:
-  - "newer:copy:libs"
-  - "newer:copy:resources"
+  - "newer:copy:sourcesToCompile"
   - "compile"
+  - "newer:copy:compiledToDest"

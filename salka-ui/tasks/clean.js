@@ -1,5 +1,6 @@
 module.exports = function (grunt, options) {
     return [
-        "<%= paths.target.root %>/*"
+        "target/compile",
+        "target/webapp"
     ];
 };

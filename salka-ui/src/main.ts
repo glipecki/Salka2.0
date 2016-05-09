@@ -1,5 +1,4 @@
-import {bootstrap} from "angular2/platform/browser";
-import {AppComponent} from "AppComponent";
-import {DemoService} from "demo/DemoService";
+import {bootstrap} from "@angular/platform-browser-dynamic";
+import {SalkaAppComponent} from "salka/SalkaAppComponent";
 
-bootstrap(<any> AppComponent, [DemoService]);
+bootstrap(SalkaAppComponent);
