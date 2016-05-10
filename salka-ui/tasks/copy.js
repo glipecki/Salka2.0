@@ -12,17 +12,6 @@ module.exports = function (grunt, options) {
                 }
             ]
         },
-        typingsToCompile: {
-            files: [
-                {
-                    expand: true,
-                    dest: "target/compile",
-                    src: [
-                        "typings/**/*"
-                    ]
-                }
-            ]
-        },
         libsToDest: {
             files: [
                 {
@@ -36,7 +25,8 @@ module.exports = function (grunt, options) {
                         "systemjs/dist/system.src.js",
                         "systemjs/dist/system-polyfills.js",
                         "rxjs/**/*.js",
-                        "@angular/**/*.js"
+                        "@angular/**/*.js",
+                        "systemjs-plugin-text/text.js"
                     ]
                 }
             ]

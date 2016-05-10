@@ -6,7 +6,6 @@ build:
   tasks:
   - "clean"
   - "copy:sourcesToCompile"
-  - "copy:typingsToCompile"
   - "compile"
   - "copy:libsToDest"
   - "copy:compiledToDest"

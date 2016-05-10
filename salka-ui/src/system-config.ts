@@ -1,36 +1,22 @@
-// map tells the System loader where to look for things
-var map = {
-    "rxjs": "libs/rxjs",
-    "@angular": "libs/@angular",
-};
-
-// packages tells the System loader how to load when no filename and/or no extension
-var packages = {
-    "salka": { defaultExtension: "js" },
-    "rxjs": { defaultExtension: "js" },
-};
-
-var packageNames = [
-    "@angular/core",
-    "@angular/common",
-    "@angular/compiler",
-    "@angular/http",
-    "@angular/platform-browser",
-    "@angular/platform-browser-dynamic",
-    "@angular/router"
-];
-
-// add package entries for angular packages in the form "@angular/common": { main: "index.js", defaultExtension: "js" }
-packageNames.forEach(function(pkgName) {
-    packages[pkgName] = { main: "index.js", defaultExtension: "js" };
+System.config({
+    map: {
+        "rxjs": "libs/rxjs",
+        "@angular": "libs/@angular",
+        "text": "libs/systemjs-plugin-text/text.js",
+        "salka/SalkaAppComponent": "salka/SalkaAppComponent.js"
+    },
+    packages: {
+        "salka": {
+            main: "main.js",
+            defaultExtension: "js"
+        },
+        "rxjs": { defaultExtension: "js" },
+        "@angular/core": { main: "index.js", defaultExtension: "js" },
+        "@angular/common": { main: "index.js", defaultExtension: "js" },
+        "@angular/compiler": { main: "index.js", defaultExtension: "js" },
+        "@angular/http": { main: "index.js", defaultExtension: "js" },
+        "@angular/platform-browser": { main: "index.js", defaultExtension: "js" },
+        "@angular/platform-browser-dynamic": { main: "index.js", defaultExtension: "js" },
+        "@angular/router": { main: "index.js", defaultExtension: "js" },
+    }
 });
-
-var config = {
-    map: map,
-    packages: packages
-}
-
-declare var System: any;
-
-//noinspection JSUnusedAssignment
-System.config(config);
