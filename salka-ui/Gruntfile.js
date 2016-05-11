@@ -21,7 +21,17 @@ module.exports = function (grunt) {
                 connect: {
                     port: 9101,
                 }
-            }
+            },
+            vendorLibs: [
+                "es6-shim/es6-shim.js",
+                "zone.js/dist/*.js",
+                "reflect-metadata/*.js",
+                "systemjs/dist/system.src.js",
+                "systemjs/dist/system-polyfills.js",
+                "rxjs/**/*.js",
+                "@angular/**/*.js",
+                "systemjs-plugin-text/text.js"
+            ]
         },
         jitGrunt: {
             staticMappings: {

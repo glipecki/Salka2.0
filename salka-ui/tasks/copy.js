@@ -18,16 +18,7 @@ module.exports = function (grunt, options) {
                     expand: true,
                     dest: "<%= paths.target.libs %>",
                     cwd: "node_modules",
-                    src: [
-                        "es6-shim/es6-shim.js",
-                        "zone.js/dist/*.js",
-                        "reflect-metadata/*.js",
-                        "systemjs/dist/system.src.js",
-                        "systemjs/dist/system-polyfills.js",
-                        "rxjs/**/*.js",
-                        "@angular/**/*.js",
-                        "systemjs-plugin-text/text.js"
-                    ]
+                    src: "<%= vendorLibs %>"
                 }
             ]
         },
