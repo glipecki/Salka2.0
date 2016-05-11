@@ -4,7 +4,7 @@ module.exports = function (grunt, options) {
             spawn: false
         },
         resources: {
-            files: ["src/**/*"],
+            files: ["<%= paths.src.root %>/**/*"],
             tasks: ["after-resources-watch"]
         }
     };

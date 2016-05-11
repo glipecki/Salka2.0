@@ -5,7 +5,6 @@ module.exports = function (grunt, options) {
                 fast: "never"
             },
             tsconfig: {
-                // tsconfig: "target/compile/src/",
                 passThrough: true
             }
         }

@@ -2,11 +2,11 @@ module.exports = function (grunt, options) {
     return {
         dev: {
             bsFiles: {
-                src: 'target/webapp/**/*'
+                src: "<%= paths.target.webapp %>/**/*"
             },
             options: {
-                port: 9100,
-                proxy: "http://localhost:9101/",
+                port: "<%= devServer.browserSync.port %>",
+                proxy: "<%= devServer.browserSync.proxyUrl %>",
                 debugInfo: true,
                 watchTask: true,
                 reloadDelay: 500,

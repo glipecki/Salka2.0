@@ -4,9 +4,22 @@ module.exports = function (grunt) {
         configPath: require("path").join(process.cwd(), "tasks"),
         config: {
             paths: {
+                src: {
+                    root: "src"
+                },
                 target: {
-                    root: "target/webapp",
+                    compile: "target/compile",
+                    webapp: "target/webapp",
                     libs: "target/webapp/libs"
+                }
+            },
+            devServer: {
+                browserSync: {
+                    port: 9100,
+                    proxyUrl: "http://localhost:9101/"
+                },
+                connect: {
+                    port: 9101,
                 }
             }
         },

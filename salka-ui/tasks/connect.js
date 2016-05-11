@@ -18,8 +18,8 @@ module.exports = function (grunt, options) {
         ],
         server: {
             options: {
-                port: 9101,
-                base: "<%= paths.target.root %>/",
+                port: "<%= devServer.connect.port %>",
+                base: "<%= paths.target.webapp %>/",
                 middleware: function (connect, options, defaultMiddleware) {
                     var serveStatic = require('serve-static');
 

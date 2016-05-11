@@ -9,6 +9,9 @@ build:
   - "compile"
   - "copy:libsToDest"
   - "copy:compiledToDest"
+build-prod:
+  tasks:
+  - "build"
   - "systemjs"
 compile:
   tasks:

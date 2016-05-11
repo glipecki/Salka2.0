@@ -4,8 +4,8 @@ module.exports = function (grunt, options) {
             files: [
                 {
                     expand: true,
-                    dest: "target/compile",
-                    cwd: "src/",
+                    dest: "<%= paths.target.compile %>",
+                    cwd: "<%= paths.src.root %>",
                     src: [
                         "**/*"
                     ]
@@ -35,7 +35,7 @@ module.exports = function (grunt, options) {
             files: [
                 {
                     expand: true,
-                    dest: "<%= paths.target.root %>",
+                    dest: "<%= paths.target.webapp %>",
                     cwd: "target/compile/",
                     src: [
                         "**/*"
