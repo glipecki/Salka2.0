@@ -9,6 +9,7 @@ build:
   - "compile"
   - "copy:libsToDest"
   - "copy:compiledToDest"
+  - "systemjs"
 compile:
   tasks:
   - "ts"

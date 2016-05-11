@@ -13,7 +13,8 @@ module.exports = function (grunt) {
         jitGrunt: {
             staticMappings: {
                 configureRewriteRules: "grunt-connect-rewrite",
-                configureProxies: "grunt-connect-proxy"
+                configureProxies: "grunt-connect-proxy",
+                systemjs: "grunt-systemjs-builder"
             }
         }
     });

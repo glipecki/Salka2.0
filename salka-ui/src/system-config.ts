@@ -7,7 +7,6 @@ System.config({
     },
     packages: {
         "salka": {
-            main: "main.js",
             defaultExtension: "js"
         },
         "rxjs": { defaultExtension: "js" },
