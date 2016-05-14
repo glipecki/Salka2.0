@@ -51,5 +51,8 @@ const packages: any = {
 
 System.config({
     map,
-    packages
+    packages,
+    // bundles: {
+    //     "app.js": ["salka/*"]
+    // }
 });
