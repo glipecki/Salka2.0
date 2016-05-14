@@ -30,7 +30,6 @@ module.exports = function (grunt) {
                 "systemjs/dist/system-polyfills.js",
                 "rxjs/**/*.js",
                 "@angular/**/*.js",
-                "systemjs-plugin-text/text.js",
                 "@angular2-material/**/*.js"
             ]
         },

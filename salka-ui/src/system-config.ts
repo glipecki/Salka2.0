@@ -4,7 +4,7 @@ const map: any = {
     "rxjs": "libs/rxjs",
     "@angular": "libs/@angular",
     "@angular2-material": "libs/@angular2-material",
-    "text": "libs/systemjs-plugin-text/text.js",
+    "text": "libs/systemjs-test-loader.js",
     "salka/SalkaAppComponent": "salka/SalkaAppComponent.js"
 };
 
