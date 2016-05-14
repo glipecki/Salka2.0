@@ -1,14 +1,33 @@
-import {Component} from "@angular/core";
-import {template} from "salka/root/SalkaRootComponent.html"
-import {MdButton} from "@angular2-material/button";
+import {MdAnchor} from "@angular2-material/button";
 import {MdCard} from "@angular2-material/card";
-import {MdInput} from "@angular2-material/input";
+import {Component} from "@angular/core";
+import {Routes, Router, ROUTER_DIRECTIVES} from "@angular/router";
+import {DashboardComponent} from "salka/dashboard/DashboardComponent";
+import {ProfileComponent} from "salka/profile/ProfileComponent";
 
 @Component({
     selector: "salka-app",
-    templateUrl: "salka/root/SalkaRootComponent.html",
-    directives: [MdButton, MdCard, MdInput]
+    template: `
+        <div>
+            <md-card style="margin-bottom: 15px;">
+                <md-card-title>{{title}}</md-card-title>
+                <a md-raised-button [routerLink]="['/dashboard']">dashboard</a>
+                <a md-raised-button [routerLink]="['/profile']">profile</a>
+            </md-card>
+            <md-card>
+                <router-outlet></router-outlet>
+            </md-card>
+        </div>
+    `,
+    directives: [MdAnchor, MdCard, ROUTER_DIRECTIVES]
 })
+@Routes([
+    {path: "/", component: DashboardComponent},
+    {path: "/dashboard", component: DashboardComponent},
+    {path: "/profile", component: ProfileComponent}
+])
 export class SalkaRootComponent {
-    protected title: string = "Hello ng world ;)";
+
+    private title: string = "Salka 2.0";
+
 }

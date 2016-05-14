@@ -4,6 +4,11 @@ module.exports = function (grunt, options) {
             {
                 from: "^/$",
                 to: "/index.html"
+            },
+            // supports html5 mode with SPA using history.pushState api without # in uri
+            {
+                from: "^[^\\.]*$",
+                to: "/index.html"
             }
         ],
         proxies: [

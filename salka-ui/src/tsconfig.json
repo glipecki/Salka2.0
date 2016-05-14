@@ -1,0 +1,7 @@
+{
+  // dummy tsconfig, used only for intellij/webstorm until resolution for issues:
+  // - https://youtrack.jetbrains.com/issue/WEB-20829
+  // - https://youtrack.jetbrains.com/issue/WEB-20852
+  // Now you can use "Use paths relative to tsconfig.json" under "Editor > General > Auto Import"
+  // with baseUrl / rootDir other than tsconfig.json basedir.
+}
