@@ -57,9 +57,7 @@
                                     <goal>exec</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>
-                                        <argument>maven-integration.bat</argument>
-                                    </arguments>
+                                    <executable>maven-integration.bat</executable>
                                 </configuration>
                             </execution>
                         </executions>
