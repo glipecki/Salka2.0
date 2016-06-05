@@ -112,7 +112,8 @@ module.exports = function (grunt) {
                         // Setup the proxy
                         var middlewares = [
                             require('grunt-connect-rewrite/lib/utils').rewriteRequest,
-                            require('grunt-connect-proxy/lib/utils').proxyRequest
+                            require('grunt-connect-proxy/lib/utils').proxyRequest,
+                            require('connect-livereload')()
                         ];
 
                         // Serve static files.
@@ -126,21 +127,6 @@ module.exports = function (grunt) {
 
                         return middlewares;
                     }
-                }
-            }
-        },
-        browserSync: {
-            dev: {
-                bsFiles: {
-                    src: '<%= config.paths.target.webapp %>/**/*'
-                },
-                options: {
-                    port: 9100,
-                    proxy: 'http://localhost:9101/',
-                    debugInfo: true,
-                    watchTask: true,
-                    reloadDelay: 500,
-                    ghostMode: false
                 }
             }
         },
@@ -166,7 +152,8 @@ module.exports = function (grunt) {
         },
         watch: {
             options: {
-                spawn: false
+                spawn: false,
+                livereload: true
             },
             resources: {
                 files: ['<%= config.paths.source %>/**/*'],
@@ -179,7 +166,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['clean', 'copy:sourcesToCompile', 'compile', 'copy:libsToDest', 'copy:compiledToDest']);
     grunt.registerTask('build-prod', ['build', 'systemjs']);
     grunt.registerTask('compile', ['ts']);
-    grunt.registerTask('devmode', ['configureRewriteRules', 'configureProxies:server', 'connect:server', 'browserSync', 'watch']);
+    grunt.registerTask('devmode', ['configureRewriteRules', 'configureProxies:server', 'connect:server', 'watch']);
     grunt.registerTask('after-resources-watch', ['newer:copy:sourcesToCompile', 'compile', 'newer:copy:compiledToDest']);
 
 };
