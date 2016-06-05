@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         'systemjs/dist/system-polyfills.js',
         'rxjs/**/*.js',
         '@angular/**/*.js',
-        '@angular2-material/**/*.js'
+        '@angular2-material/**/*.js',
     ];
 
     grunt.initConfig({
